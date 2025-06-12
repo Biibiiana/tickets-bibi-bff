@@ -40,13 +40,14 @@ const concertRoutes = require('./routes/concertRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
 
 const app = express();
+const PORT = process.env.PORT || 8080;
 
 app.get('/', (req, res) => {
     res.send('Welcome to tickets-bibi-bff-production!');
 });
 
-app.listen(3000, '0.0.0.0', () => {
-  console.log('Server running on port 3000');
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 // Conectar a la base de datos
@@ -84,7 +85,6 @@ app.use(cors({
 }));
 
 // Puerto del servidor
-const PORT = process.env.PORT || 5000;
 
 // Usar rutas
 app.use('/api/auth', authRoutes);
