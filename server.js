@@ -40,6 +40,9 @@ const concertRoutes = require('./routes/concertRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
 
 const app = express();
+app.listen(8080, '0.0.0.0', () => {
+  console.log('Server running on port 8080');
+});
 
 // Conectar a la base de datos
 connectDB();
