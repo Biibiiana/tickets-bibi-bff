@@ -40,8 +40,13 @@ const concertRoutes = require('./routes/concertRoutes');
 const ticketRoutes = require('./routes/ticketRoutes');
 
 const app = express();
-app.listen(8080, '0.0.0.0', () => {
-  console.log('Server running on port 8080');
+
+app.get('/', (req, res) => {
+    res.send('Welcome to tickets-bibi-bff-production!');
+});
+
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Server running on port 3000');
 });
 
 // Conectar a la base de datos
