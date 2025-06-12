@@ -3,10 +3,8 @@
   publish = "dist"
 
 [[headers]]
- = {
-    headers = {
-      "Access-Control-Allow-Origin" = "*"
-      "Access-Control-Allow-Methods" = "GET, POST, PUT, DELETE, OPTIONS"
-      "Access-Control-Allow-Headers" = "Content-Type"
-    }
-  }
+headers = {
+  "Access-Control-Allow-Origin" = "*"
+  "Access-Control-Allow-Methods" = "GET, POST, PUT, DELETE, OPTIONS"
+  "Access-Control-Allow-Headers" = "Content-Type"
+}
