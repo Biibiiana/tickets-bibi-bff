@@ -58,7 +58,8 @@ app.use(express.json());
 // Middleware para CORS
 const allowedOrigins = [
   'http://localhost:5173', // Vue.js development
-  'https://ticketsb.netlify.app' // Tu dominio de Netlify
+  'https://ticketsb.netlify.app', // Tu dominio de Netlify
+  'https://tickets-bibi-bff-production.up.railway.app/',
 ];
 
 app.use((req, res, next) => {
