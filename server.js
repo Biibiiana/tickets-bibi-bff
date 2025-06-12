@@ -48,13 +48,22 @@ connectDB();
 app.use(express.json());
 
 // Middleware para CORS
+const allowedOrigins = [
+  'http://localhost:5173', // Vue.js development
+  'https://ticketsb.netlify.app' // Tu dominio de Netlify
+];
+
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Credentials', 'true');
   
   if (req.method === 'OPTIONS') {
-    return res.sendStatus(204); // Handle preflight requests
+    return res.sendStatus(204);
   }
   next();
 });
